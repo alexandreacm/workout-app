@@ -14,11 +14,13 @@ import WorkoutDetailScreen from "../screens/WorkoutDetailScreen";
 
 import { FontAwesome, Entypo } from "@expo/vector-icons";
 
-export default function Navigation({
-  colorScheme,
-}: {
+type SchemaProps = {
   colorScheme: ColorSchemeName;
-}) {
+}
+
+export function Navigation({
+  colorScheme,
+}: SchemaProps) {
   return (
     <NavigationContainer
       theme={colorScheme === "light" ? DefaultTheme : DarkTheme}
@@ -63,9 +65,9 @@ function BottomNavigator() {
             <FontAwesome name="home" size={size} color={color} />
           ),
         }}
-        // options={{
-        //   unmountOnBlur: true,
-        // }}
+      // options={{
+      //   unmountOnBlur: true,
+      // }}
       />
       <bottomTab.Screen
         name="Planner"
