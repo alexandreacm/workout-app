@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
-import { useWorkoutBySlug } from "../hooks/useWorkoutBySlug";
-import { PressableText } from "../components/PressableText";
-import { Modal } from "../components/Modal";
-import { formatSec } from "../utils/time";
+import { useWorkoutBySlug } from "../../hooks/useWorkoutBySlug";
+import { PressableText } from "../../components/PressableText";
+import { Modal } from "../../components/Modal";
+import { formatSec } from "../../utils/time";
 
 import { FontAwesome as Icon } from "@expo/vector-icons";
-import WorkoutItem from "../components/WorkoutItem";
-import { SequenceItem, WorkOut } from "../types/data";
-import useCountDown from "../hooks/useCountDown";
+import WorkoutItem from "../../components/WorkoutItem";
+import { SequenceItem, WorkOut } from "../../types/data";
+import useCountDown from "../../hooks/useCountDown";
 
 type DetailParams = {
   route: {
@@ -21,11 +21,12 @@ type DetailParams = {
 
 type Navigation = NativeStackHeaderProps & DetailParams;
 
-export default function WorkoutDetailScreen({ route }: Navigation) {
+export default function WorkoutDetail({ route }: Navigation) {
   const [sequence, setSequence] = useState<Array<SequenceItem>>([]);
   const [trackerIdx, setTrackerIdx] = useState(-1);
 
   const slug = route.params.slug;
+  // const _slug = (route.params as any).slug;
   const workout = useWorkoutBySlug(slug);
 
   const { countDown, isRunning, stop, start } = useCountDown(trackerIdx);
@@ -131,8 +132,8 @@ export default function WorkoutDetailScreen({ route }: Navigation) {
             {sequence.length == 0
               ? "Preparing"
               : hasReachedEnd
-              ? "Good job"
-              : sequence[trackerIdx].name}
+                ? "Good job"
+                : sequence[trackerIdx].name}
           </Text>
         </View>
       </View>

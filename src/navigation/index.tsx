@@ -8,9 +8,9 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import HomeScreen from "../screens/HomeScreen";
-import PlannerScreen from "../screens/PlannerScreen";
-import WorkoutDetailScreen from "../screens/WorkoutDetailScreen";
+import HomeScreen from "../screens/Home";
+import PlannerScreen from "../screens/Planner";
+import WorkoutDetailScreen from "../screens/WorkoutDetail";
 
 import { FontAwesome, Entypo } from "@expo/vector-icons";
 

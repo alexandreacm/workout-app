@@ -4,19 +4,19 @@ import slugify from "slugify";
 
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 
-import { SequenceItem, SequenceType, WorkOut } from "../types/data";
-import ExerciseItem from "../components/ExerciseItem";
-import { PressableText } from "../components/PressableText";
-import { Modal } from "../components/Modal";
+import { SequenceItem, SequenceType, WorkOut } from "../../types/data";
+import ExerciseItem from "../../components/ExerciseItem";
+import { PressableText } from "../../components/PressableText";
+import { Modal } from "../../components/Modal";
 
-import ExerciseForm, { ExerciseFormData } from "../components/ExerciseForm";
-import WorkoutForm, { WorkoutFormData } from "../components/WorkoutForm";
-import { storeWorkout } from "../storage/workout";
-import { PressableThemeText } from "../components/PressableThemeText";
+import ExerciseForm, { ExerciseFormData } from "../../components/ExerciseForm";
+import WorkoutForm, { WorkoutFormData } from "../../components/WorkoutForm";
+import { storeWorkout } from "../../storage/workout";
+import { PressableThemeText } from "../../components/PressableThemeText";
 
 type Navigation = NativeStackHeaderProps;
 
-export default function PlannerScreen({ navigation, route }: Navigation) {
+export default function Planner({ navigation, route }: Navigation) {
   const [seqItems, setSeqItems] = useState<Array<SequenceItem>>([]);
   const colorSchema = useColorScheme();
 
@@ -100,7 +100,7 @@ export default function PlannerScreen({ navigation, route }: Navigation) {
         >
           {({ handleClose }) => (
             <WorkoutForm
-              onSubmit={async(data) => {
+              onSubmit={async (data) => {
                 await handleWorkFormSubmit(data);
                 handleClose();
                 navigation.navigate('Home');
