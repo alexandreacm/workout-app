@@ -1,6 +1,4 @@
-import AsyncStorage, {
-  useAsyncStorage,
-} from "@react-native-async-storage/async-storage";
+import AsyncStorage, { useAsyncStorage } from "@react-native-async-storage/async-storage";
 
 async function setData(key: string, value: any) {
   try {
