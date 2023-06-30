@@ -7,11 +7,11 @@ import { FontAwesome as Icon } from "@expo/vector-icons";
 type ModalProps = {
   activator?: FunctionComponent<{
     handleOpen: () => void;
-  }>;
+  }>,
   children: FunctionComponent<{
     handleClose: () => void
     handleOpen: () => void;
-  }>;
+  }>
 };
 
 export function Modal({ activator: Activator, children }: ModalProps) {
