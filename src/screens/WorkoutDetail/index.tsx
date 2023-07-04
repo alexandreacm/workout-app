@@ -46,7 +46,7 @@ export default function WorkoutDetail({ route }: Navigation) {
 
   function AddItemToSequence(idx: number) {
     ////When I use this ! I'm sure that workout never will be undefined
-    let newSequence = [];
+    let newSequence: SequenceItem[] = [];
 
     idx > 0
       ? (newSequence = [...sequence, workout!.sequence[idx]])
