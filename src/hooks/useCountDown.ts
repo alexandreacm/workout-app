@@ -33,7 +33,7 @@ export default function useCountDown(idx: number, initialCount: number = -1) {
     }
   }, [countDown]);
 
-  function cleanup() {
+  const cleanup = () => {
     //debugger;
     if (intervalRef.current) {
       window.clearInterval(intervalRef.current); //DESTROYED INTERVAL.
